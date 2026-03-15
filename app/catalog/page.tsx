@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { prisma } from "@/lib/db"
 
+export const dynamic = "force-dynamic"
+
 export default async function Catalog() {
   const products = await prisma.product.findMany({
     orderBy: { createdAt: "desc" }

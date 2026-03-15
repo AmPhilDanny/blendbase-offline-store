@@ -3,6 +3,8 @@ import Link from "next/link"
 import { Button } from "@/app/components/ui/button"
 import { Product } from "@prisma/client"
 
+export const dynamic = "force-dynamic"
+
 export default async function AdminProducts() {
   const products = await prisma.product.findMany({
     orderBy: { createdAt: "desc" }

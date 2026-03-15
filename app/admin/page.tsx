@@ -1,7 +1,7 @@
-import { prisma } from "@/lib/db"
-import Link from "next/link"
 import dayjs from "dayjs"
 import { Order } from "@prisma/client"
+
+export const dynamic = "force-dynamic"
 
 export default async function AdminDashboard() {
   const orders = await prisma.order.findMany({
